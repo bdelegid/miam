@@ -1,4 +1,11 @@
-task cleanAll(type: Delete) {
-    dependsOn(":backend:clean", ":frontend:clean")
-    delete 'build'
+plugins {
+  id "org.sonarqube" version "3.3"
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "bdelegid_miam"
+    property "sonar.organization", "bdelegid"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
 }
